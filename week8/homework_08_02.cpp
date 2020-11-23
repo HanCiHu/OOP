@@ -46,5 +46,4 @@ int main(){
 	std::cout << context->executeStrategy(10,5) << std::endl;
 	context = new Context(new OperationSubstract());
 	std::cout << context->executeStrategy(10,5) << std::endl;
-
 }
