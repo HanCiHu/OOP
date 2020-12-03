@@ -19,7 +19,7 @@ class commandKey
 		return (this->key == key);
 	}
 
-	virtual void Execute() = 0; 
+	virtual void Execute() = 0;
 };
 
 class insert : public commandKey
@@ -42,7 +42,7 @@ class del : public commandKey
 	}
 };
 
-class search : public commandKey
+class se : public commandKey
 {
 	public:
 	void Execute()
@@ -119,16 +119,25 @@ class commandHandler
 
 void printTxt(string txt)
 {
-	
+
 }
 
-string* setTxt()
+string setTxt()
 {
-	string line;
-	ifstream txt("test.txt");
+	ifstream File;
+	string txt = "";
 
-	getline(txt,line);
-
+	File.open("test.txt");
+	if (File.is_open()){
+		while(!File.eof()){
+			char *s = new char[75];
+			File.read(s,75);
+			txt += s;
+			free(s);
+		}
+	}
+	File.close();
+	return txt;
 }
 
 int main(){
@@ -142,7 +151,7 @@ int main(){
 	commandDelete->setKey('d');
 	commands->addCommand(commandDelete);
 
-	commandKey *commandSearch = new search;
+	commandKey *commandSearch = new se;
 	commandSearch->setKey('s');
 	commands->addCommand(commandSearch);
 
@@ -163,10 +172,12 @@ int main(){
 	commands->addCommand(commandChange);
 
 	char command;
-	string *txt = setTxt();
+	string txt = setTxt();
 
 	do
 	{
+		printTxt(txt);
+		cout << "--------------------" << endl;
 		cout << "input : ";
 		cin >> command;
 		if (commands->Execute(command) == false){
@@ -174,6 +185,23 @@ int main(){
 		}
 
 	} while (command != 't');
-	
 
 }
+
+/*
+int main(){
+	globalContents *contents = 0;
+	ifstream File;
+	File.open("test.txt");
+	if (File.is_open()){
+		while(!File.eof()){
+			char *s = new char[75];
+			File.read(s,75);
+			cout << s << endl;
+			free(s);
+		}
+	}
+	File.close();
+	return 0;
+}
+*/
