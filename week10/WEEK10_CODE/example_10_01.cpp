@@ -32,3 +32,10 @@ int main() {
 	getchar();
 	return 0;
 }
+/*
+Base class constuctor
+Base class constuctor
+Derived class constructor
+== pointer ==
+Derived
+*/

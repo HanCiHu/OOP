@@ -28,7 +28,14 @@ int main() {
 	Base* xx = &c;//OK.upcast
 	Derived* yy = dynamic_cast<Derived*>(xx);
 	yy->what();
+/*
+	Base p;
+	Derived c;
 
+	std::cout << " === Pointer ===" << std::endl;
+	Base* xx = &c;//OK.upcast
+	Derived* yy = dynamic_cast<Derived*>(xx);
+*/
 	getchar();
 	return 0;
 }

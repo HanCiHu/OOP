@@ -15,7 +15,7 @@ void bubble_sort(ForwardIterator first, ForwardIterator last, Compare comp) {
 		}
 	}
 }
-//FuctorÀÎ compGreater¸¦ ±¸ÇöÇÏ¼¼¿ä. (ÈùÆ®: 1. µÎ Á¤¼ö ºñ±³ °á°ú¸¦ bool Å¸ÀÔÀ» ¸®ÅÏÇÑ´Ù. 2. operator() ¸¦ ±¸ÇöÇÑ´Ù. 3. Fuctor´Â Å¬·¡½º ÇüÅÂ¿Í ºñ½ÁÇÏ´Ù.)
+//Fuctorï¿½ï¿½ compGreaterï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½. (ï¿½ï¿½Æ®: 1. ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ bool Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½. 2. operator() ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½. 3. Fuctorï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â¿ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.)
 
 struct compLess{
 	bool operator()(int cur, int prev){
@@ -36,9 +36,9 @@ int main() {
 	std::forward_list<int> values{ 7, 0, 6, 1, 5, 2, 4, 3 };
 
 	std::cout << "sorted Ascending" << std::endl;
-	compLess compLess; //Functor »ý¼º
+	compLess compLess; //Functor ï¿½ï¿½ï¿½ï¿½
 	bubble_sort(values.begin(), values.end(), compLess);
-	//°á°ú ÇÁ¸°Æ®
+	//ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®
 	for (auto it = values.begin(); it != values.end(); ++it) {
 		std::cout << ' ' << *it;
 	}
@@ -46,9 +46,9 @@ int main() {
 
 
 	std::cout << "sorted Descending" << std::endl;
-	compGreater compGreater; //Functor »ý¼º
+	compGreater compGreater; //Functor ï¿½ï¿½ï¿½ï¿½
 	bubble_sort(values.begin(), values.end(), compGreater);
-	//°á°ú ÇÁ¸°Æ®
+	//ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®
 	for (auto it = values.begin(); it != values.end(); ++it) {
 		std::cout << ' ' << *it;
 	}

@@ -12,6 +12,7 @@ public:
         std::cout << "Parent Destructor invocation" << std::endl;
     }
 };
+
 class Child : public Parent {
     char* c;
 public:

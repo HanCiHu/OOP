@@ -8,7 +8,7 @@ void swapXX(T& a, T& b) {
 }
 template<>
 void swapXX(std::string& a, std::string& b) {
-
+	std::cout << "string swap" << std::endl;
 }
 
 int main() {
