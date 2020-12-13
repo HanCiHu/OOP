@@ -5,6 +5,11 @@
 		"string": "cpp",
 		"xiosbase": "cpp",
 		"iosfwd": "cpp",
-		"ostream": "cpp"
+		"ostream": "cpp",
+		"vector": "cpp",
+		"regex": "cpp",
+		"iostream": "cpp",
+		"iterator": "cpp",
+		"fstream": "cpp"
 	}
 }
